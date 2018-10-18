@@ -11,6 +11,7 @@ annual_return = 0.04
 your_total_cost = int(real_total_cost) - int(real_total_cost)*portion_deposit
 
 annual_salary = int(annual_salary)
+portion_saved = float(portion_saved)
 annual_return = float(annual_return)
 
 monthly_salary = annual_salary/12
