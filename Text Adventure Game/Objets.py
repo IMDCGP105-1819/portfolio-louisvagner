@@ -1,91 +1,83 @@
 # Important objects - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-class uniform:
-    #A mettre sinon "Intrusion"
-    pass
+class Item:
+    def __init__(self, name, description):
+        self.name = name
+        self.description = description
 
-class watch:
+items = []
+
+items.append(Item("uniform", "vault uniform"))
+items.append(Item("watch", ""))
+items.append(Item("broom", ""))
+items.append(Item("notebook", ""))
+items.append(Item("adhesif_tape", ""))
+items.append(Item("armors", ""))
+items.append(Item("guns", ""))
+items.append(Item("bottles", ""))
+items.append(Item("syringes", ""))
+items.append(Item("rats", ""))
+
+uniform = Item("uniform","shirt and trouser representative of the vault you are in.")
+    #A mettre sinon <<Intrusion>>
+
+watch = Item("watch","bracelet giving the time.")
     #avoir une idée de l'heure
-    pass
 
-class bottles:
-    #assouvir soif
-    pass
-
-class broom:
+broom = Item("broom","long broom that helps get rid of dust.")
     #chasser les rats
-    pass
-
-class notepad:
+             
+notebook = Item("notebook","block with several sheets of paper, it is possible to write in if used.")
     #permet d'ecrire ce qu'on veut
-    pass
 
-class toolbox:
+toolbox = Item("toolbox","box containing several DIY tools. Repairs things broken.")
     #reparer les machines
-    pass
 
-class extinguisher:
-    #eteindre le feu
-    pass
-
-class adhesif:
+adhesif_tape = Item("adhesif tape","very sticky DIY adhesive tape.")
     #colmater les tuyaux
-    pass
 
-class first_aid:
-    #se soigner
-    pass
-
-class junks_scrap:
-    #pour construire son arme
-    pass
-
-class armors:
+armors = Item("armors","protection for the body used for combat.")
     #augmente la défense
-    pass
 
-class guns:
+guns = Item("guns","firearm used to defend or kill.")
     #permet de se defendre
-    pass
 
-class chemicals:
-    #peut tuer si on les boits
-    pass
+"""extinguisher = Item("extinguisher","Object to extinguish a fire.")
+    #eteindre le feu
 
-class antiradiation_suit:
-    #protège des radiations (pas totalement)
-    pass
+first_aid = Item("first aid kit","Care kit used between fights.")
+    #se soigner
 
-class antiradiation_care:
-    #soigne les radiations
-    pass
-
-class gun_parts:
+junks_scrap = Item("junks and scrap","old bits of junk and scrap for the sole purpose of being recycled.")
     #pour construire son arme
-    pass
 
-class bullets:
+antiradiation_suit = Item("anti-radiation suit","radiation protection suit.")
+    #protège des radiations (pas totalement)
+
+antiradiation_care = Item("anti-radiation care","care that cancels the effects of radiation.")
+    #soigne les radiations
+             
+gun_parts = Item("gun parts","random pieces from gun.")
+    #pour construire son arme
+
+bullets = Item("bullets","ammunition used with a gun.")
     #à équiper avec l'arme
-    pass
 
-class weight:
+muscle_work = Item("weight","common object in a gym to build muscles.")
     #se muscler
-    pass
 
-class ropes:
-    #se muscler
-    pass
-
-class work_bench:
-    #se muscler
-    pass
-
-class map:
-    #la carte
-    pass
+shelter_map = Item("map","allows you to find your way when you are lost.")
+    #la carte"""
 
 # Objects that can't move - - - - - - - - - - - - - - - - - - - - - - - - - - -
-class alarm_button:
+
+lever = Item("lever","Opens the Vault door when actioned.")
+    #permet d'ouvrir la porte pur sortir
+
+level_button = Item(" press button","Can lead you to the lower and upper levels of the vault, just press the buttons.")
+    #eteindre le feu
+
+"""class alarm_button:
     pass
 
 class jukebox:
@@ -97,35 +89,36 @@ class fountain:
 class control_panel:
     pass
 
-class bed:
+class medical_bed:
     pass
 
 class microscope:
     pass
 
-class lever:
-    pass
-
 class machines:
-    pass
-
-class level_button:
-    pass
-
+    pass"""
 
 # Objects with no specific use - - - - - - - - - - - - - - - - - - - - - - - - -
-class alarm_clock:
+
+bottles = Item("bottles","Bottles filled with fresh water.")
+    #assouvi la soif
+
+syringes = Item("syringes","chemicals use for experiments on rats.")
+    #produit chimique experimental
+
+rats = Item("rats","there is a little group of rats playing around.")
+    #a faire evacuer avant de rentrer
+
+"""class alarm_clock:
     pass
 
 class plates:
     pass
 
-class syringes:
-    pass
-
 class boxes:
     pass
 
-class rat:
+class chemicals:
+    #peut tuer si on les boits
     pass
-
+"""
