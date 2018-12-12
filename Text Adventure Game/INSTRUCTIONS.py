@@ -2,7 +2,7 @@
 
 Here are commands used to move around/interact with the world :
     go "direction" - (ex:“north”, “south”, “east”, “west”, “up” or “down”)
-    inspect – provides the description of the current room
+    look room – provides the description of the current room
     look "thing" – provides a description of the specified thing (in the room or the inventory)
     take "thing" – picks up the specified thing if it is in the current room
     drop "thing" – drops the specified thing from the players inventory
