@@ -1,45 +1,31 @@
 # Important objects - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 class Item:
-    def __init__(self, name, description):
+    def __init__(self, name, description, location):
         self.name = name
         self.description = description
+        self.location = location
 
 items = []
+names = []
+position = []
 
-items.append(Item("uniform", "vault uniform"))
-items.append(Item("watch", ""))
-items.append(Item("broom", ""))
-items.append(Item("notebook", ""))
-items.append(Item("adhesif_tape", ""))
-items.append(Item("armors", ""))
-items.append(Item("guns", ""))
-items.append(Item("bottles", ""))
-items.append(Item("syringes", ""))
-items.append(Item("rats", ""))
-
-uniform = Item("uniform","shirt and trouser representative of the vault you are in.")
+uniform = Item("uniform","- shirt and trouser representative of the vault you are in. \n /!\ Put it on before getting out of the barracks.", (2, 0))
     #A mettre sinon <<Intrusion>>
 
-watch = Item("watch","bracelet giving the time.")
+watch = Item("watch","- bracelet giving the time.", (2, 0))
     #avoir une idée de l'heure
 
-broom = Item("broom","long broom that helps get rid of dust.")
+broom = Item("broom","- long broom that helps get rid of dust.", (2, 2))
     #chasser les rats
              
-notebook = Item("notebook","block with several sheets of paper, it is possible to write in if used.")
+notebook = Item("notebook","- block with several sheets of paper, it is possible to write in if used.", (2, 6))
     #permet d'ecrire ce qu'on veut
 
-toolbox = Item("toolbox","box containing several DIY tools. Repairs things broken.")
-    #reparer les machines
-
-adhesif_tape = Item("adhesif tape","very sticky DIY adhesive tape.")
-    #colmater les tuyaux
-
-armors = Item("armors","protection for the body used for combat.")
+armor = Item("armor","- protection for the body used for combat.", (0, 5))
     #augmente la défense
 
-guns = Item("guns","firearm used to defend or kill.")
+gun = Item("gun","- firearm used to defend or kill.", (0 ,5))
     #permet de se defendre
 
 """extinguisher = Item("extinguisher","Object to extinguish a fire.")
@@ -71,11 +57,15 @@ shelter_map = Item("map","allows you to find your way when you are lost.")
 
 # Objects that can't move - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-lever = Item("lever","Opens the Vault door when actioned.")
+lever = Item("lever","- Opens the Vault door when actioned.", (0, 1))
     #permet d'ouvrir la porte pur sortir
 
-level_button = Item(" press button","Can lead you to the lower and upper levels of the vault, just press the buttons.")
-    #eteindre le feu
+button = Item("button","- Can lead you to the lower and upper levels of the vault, just press the buttons.", (1, 1))
+    #permet d'atteindre les autres etages
+button = Item("button","- Can lead you to the lower and upper levels of the vault, just press the buttons.", (1, 5))
+    #permet d'atteindre les autres etages
+button = Item("button","- Can lead you to the lower and upper levels of the vault, just press the buttons.", (1, 9))
+    #permet d'atteindre les autres etages
 
 """class alarm_button:
     pass
@@ -100,13 +90,19 @@ class machines:
 
 # Objects with no specific use - - - - - - - - - - - - - - - - - - - - - - - - -
 
-bottles = Item("bottles","Bottles filled with fresh water.")
+bottles = Item("bottles","- Bottles filled with fresh water.", (2, 2))
     #assouvi la soif
 
-syringes = Item("syringes","chemicals use for experiments on rats.")
+toolbox = Item("toolbox","- box containing several DIY tools. Repairs things broken.", (2, 6))
+    #reparer les machines
+
+adhesif_tape = Item("adhesif tape","- very sticky DIY adhesive tape.", (2, 4))
+    #colmater les tuyaux
+
+syringes = Item("syringes","- chemicals use for experiments on rats.",(2, 8))
     #produit chimique experimental
 
-rats = Item("rats","there is a little group of rats playing around.")
+rats = Item("rats","- there is a little group of rats playing around.", (0, 5))
     #a faire evacuer avant de rentrer
 
 """class alarm_clock:
@@ -122,3 +118,45 @@ class chemicals:
     #peut tuer si on les boits
     pass
 """
+
+items.append(uniform.description)
+items.append(watch.description)
+items.append(broom.description)
+items.append(notebook.description)
+items.append(toolbox.description)
+items.append(adhesif_tape.description)
+items.append(armor.description)
+items.append(gun.description)
+items.append(lever.description)
+items.append(button.description)
+items.append(bottles.description)
+items.append(syringes.description)
+items.append(rats.description)
+
+names.append(uniform.name)
+names.append(watch.name)
+names.append(broom.name)
+names.append(notebook.name)
+names.append(toolbox.name)
+names.append(adhesif_tape.name)
+names.append(armor.name)
+names.append(gun.name)
+names.append(lever.name)
+names.append(button.name)
+names.append(bottles.name)
+names.append(syringes.name)
+names.append(rats.name)
+
+position.append(uniform.location)
+position.append(watch.location)
+position.append(broom.location)
+position.append(notebook.location)
+position.append(toolbox.location)
+position.append(adhesif_tape.location)
+position.append(armor.location)
+position.append(gun.location)
+position.append(lever.location)
+position.append(button.location)
+position.append(bottles.location)
+position.append(syringes.location)
+position.append(rats.location)

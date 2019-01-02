@@ -1,17 +1,43 @@
+import Personnage, Objets
+
 class Room:
-    def __init__(self, description, items):
+    def __init__(self, name, description, items, location):
+        self.name = name
         self.description = description
         self.items = items
+        self.location = location
 
-barracks = Room("You are in the barracks, you can see in the room different objects as an alarm clock, a uniform and an alarm button.", ["alarm clock","uniforms","watch","alarm button"])
-barracks_list = ["uniform","watch"]
+    def print_items(self):
+        item_str = ""
+        for item in self.items:
+            item_str = item_str + item + ", "
+            
+        print(item_str[0:-2])
+
+        
+
+def search_room(location):
+    for room in rooms:
+        if room.location == location:
+            return room
+        
+rooms = []
+rooms.append( Room("vault door", "- you are in the vault door. There is way out to the east. Item(s) in the room:", [Objets.names[8]], (0, 1)))
+#lever
+
+rooms.append(Room("elevator", "- you are in the elevator of floor 0. There is way out to the east and to the west. You can also go down a floor. Item(s) in the room:", [Objets.names[9]], (1, 1)))
+rooms.append(Room("elevator", "- you are in the elevator of floor -1. There is way out to the east and to the west. You can also go down or up a floor. Item(s) in the room:", [Objets.names[9]], (1, 5)))
+rooms.append(Room("elevator", "- you are in the elevator of floor -2. There is way out to the east and to the west. You can also go up a floor. Item(s) in the room:", [Objets.names[9]], (1, 9)))
+#level buttons
+#shelter map
+
+rooms.append(Room("barracks", "- you are in the barracks. There is way out to the south. Item(s) in the room:", [Objets.names[0],Objets.names[1]], (2, 0)))
 #alarm clock
 #uniforms
 #watch
 #alarm button
 
-dining_room = Room("You are in the dinig room, you can see in the room different objects as some bottles, some plates, a jukebox, a fountain, a broom and an alarm button.", ["bottles","plates","jukebox","fountain","broom","alarm button"])
-dining_list = ["bottles","broom"]
+rooms.append(Room("dining room", "- you are in the dining room. There is way out to the west and to the north. Item(s) in the room:", [Objets.names[10],Objets.names[2]], (2, 2)))
 #bottles
 #plates
 #jukebox
@@ -19,59 +45,48 @@ dining_list = ["bottles","broom"]
 #broom
 #alarm button
 
-power_plant = Room("You are in the power plant, you can see in the room different objects as a notepad, a toolbox, a control panel and an extinguisher.", ["notepad","toolbox","control panel","extinguisher"])
-power_list = ["notepad"]
-#notepad
-#toolbox
-#control panel
-#extinguisher
-
-water_treatment_plant= Room("You are in the water treatment plant, you can see in the room different objects as a notepad, atoolbox, an adhesif paper, a control panel and an extinguisher.", ["notepad","toolbox","adhesif","control panel","extinguisher"])
-water_list = ["notepad","adhesif"]
-#notepad
-#toolbox
-#adhesif
-#control panel
-#extinguisher
-
-hospital = Room("You are in the hospital, you can see in the room different objects as beds, first aid kit, a lot of syringes.", ["beds","first aid kit","syringes"])
-hospital_list = []
-#beds
-#first aid kit
-#syringes
-
-storage_room = Room("You are in the storage room, you can see in the room different objects as some boxes, junk and scrap, armors and guns and some weird rats.", ["boxes","junk boxes","armors","guns","rats"])
-storage_list = ["armors","guns"]
+rooms.append(Room("storage room", "- you are in the storage room. There is way out to the east. Item(s) in the room:",[Objets.names[6],Objets.names[7],Objets.names[12]], (0, 5)))
 #boxes
 #junks and scrap
 #armors
 #guns
 #rats
 
-science_lab = Room("You are in the science lab, you can see in the room different objects as chemicals, a huge microscope, some anti-radiation suits and anti-radiation care.", ["chemicals","microscope","anti-radiation suit","anti-radiation care"])
-science_list = ["syringes"]
+rooms.append(Room("power plant", "- you are in the power plant. There is way out to the north. Item(s) in the room:", [Objets.names[3],Objets.names[4]], (2, 6)))
+#notebook
+#toolbox
+#control panel
+#extinguisher
+
+rooms.append(Room("water treatment plant", "- you are in the water treatment plant. There is way out to the south. Item(s) in the room:", [Objets.names[5]], (2, 4)))
+#notebook
+#toolbox
+#adhesif
+#control panel
+#extinguisher
+
+rooms.append(Room("armory","- you are in the armory. There is way out to the south. Item(s) in the room:", [], (0, 8)))
+#gun parts
+#bullets
+#machines
+
+rooms.append(Room("weight room", "- you are in the weight room. There is way out to the north. Item(s) in the room:", [], (0, 10)))
+#weights
+#ropes
+#work bench
+
+rooms.append(Room("hospital","- you are in the hospital. There is way out to the south. Item(s) in the room:", [Objets.names[9]], (2, 8)))
+#beds
+#first aid kit
 #syringes
+
+rooms.append(Room("science lab", "- you are in the science lab. There is way out to the north. Item(s) in the room:", [], (2, 10)))
 #chemicals
 #microscope
 #anti-radiation suit
 #anti-radiation care
 
-vault_door = Room("You are in the vault door, you can see in the room a lever.", ["lever"])
-vault_list = ["lever"]
-#lever
-
-armory = Room("You are in the armory, you can see in the room different objects as gun parts, bullets and machines.", ["gun parts","bullets","machines"])
-armory_list = []
-#gun parts
-#bullets
-#machines
-
-weight_room = Room("You are in the weight room, you can see in the room different objects as weights, ropes and a work bench.", ["weights","ropes","work bench"])
-waight_list = []
-#weights
-#ropes
-#work bench
-
-elevator = Room("You are in the elevator, you can see on the wall level buttons and the shelter's map.", ["level button","shelter map"])
-#level buttons
-#shelter map
+rooms.append(Room("corridor", "- you are in a corridor. You can enter a room to the north, to the south and to the west.", [], (2, 1)))
+rooms.append(Room("corridor", "- you are in a corridor. You can enter a room to the north, to the south and to the west.", [], (2, 5)))
+rooms.append(Room("corridor", "- you are in a corridor. You can enter a room to the north, to the south and to the west.", [], (2, 9)))
+rooms.append(Room("corridor", "- you are in a corridor. You can enter a room to the north, to the south and to the east.", [], (0, 9)))
