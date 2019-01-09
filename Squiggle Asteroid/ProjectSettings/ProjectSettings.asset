@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: fc72690acbe714240a1d5c2c31cff6ce
+  productGUID: e9ca40946f060744f81da92703fd5bb4
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Squiggle Asteroid
+  productName: On recommence
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -618,8 +618,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 952a6af1-a754-4614-beab-8608b6f9b75a
-  projectName: Squiggle Asteroid
+  cloudProjectId: dd7a2727-01f1-4cfe-8b10-60c91db79e01
+  projectName: On recommence (1)
   organizationId: unity_6ieb5h5pfcqcpg
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
