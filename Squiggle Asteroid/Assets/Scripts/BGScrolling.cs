@@ -15,7 +15,9 @@ public class BGScrolling : MonoBehaviour
         startPosition = transform.position;
 	}
 	
-	// Update is called once per frame
+	// Makes the background scroll while the game plays with :
+    // - a determined speed
+    // - a position from where the background starts scrolling
 	void Update ()
     {
         float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);

@@ -6,9 +6,9 @@ public class DestroyByContact : MonoBehaviour
 {
     public GameObject asteroidExplosion;
     public GameObject starshipExplosion;
-    public GameObject playerExplosion;
 
     private int scoreValue;
+    private int healthLost;
     private GameController gameController;
 
     void Start()
@@ -24,27 +24,6 @@ public class DestroyByContact : MonoBehaviour
         }
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //if (other.CompareTag("Boundary") || other.CompareTag("Enemy"))
-    //{
-    //return;
-    //}
-
-    //if (asteroidExplosion != null)
-    //{
-    //Instantiate(asteroidExplosion, transform.position, transform.rotation);
-    //}
-
-    //if (other.CompareTag("Player"))
-    //{
-    //Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-    //gameController.GameOver();
-    //}
-    //gameController.AddScore(scoreValue);
-    //Destroy(other.gameObject);
-    //Destroy(gameObject);
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.name == "Asteroids(Clone)")
@@ -52,31 +31,37 @@ public class DestroyByContact : MonoBehaviour
             Destroy(col.gameObject);
             Instantiate(asteroidExplosion, transform.position, transform.rotation);
             scoreValue = 10;
+            healthLost = 40;
         }
         else if (col.gameObject.name == "Asteroids (1)(Clone)")
         {
             Destroy(col.gameObject);
             Instantiate(asteroidExplosion, transform.position, transform.rotation);
             scoreValue = 5;
+            healthLost = 20;
         }
         else if (col.gameObject.name == "Asteroids (2)(Clone)")
         {
             Destroy(col.gameObject);
             Instantiate(asteroidExplosion, transform.position, transform.rotation);
             scoreValue = 10;
+            healthLost = 40;
         }
         else if (col.gameObject.name == "Starship(Clone)")
         {
             Destroy(col.gameObject);
             Instantiate(starshipExplosion, transform.position, transform.rotation);
             scoreValue = 20;
+            healthLost = 50;
         }
         else if (col.gameObject.name == "Laser(Clone)")
         {
             Destroy(col.gameObject);
+            healthLost = 20;
         }
 
     gameController.AddScore(scoreValue);
+    gameController.LoseHealth(healthLost);
     
     }
 
